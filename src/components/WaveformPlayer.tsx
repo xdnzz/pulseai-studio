@@ -51,22 +51,22 @@ export function WaveformPlayer() {
   };
 
   return (
-    <section className="bg-canvas-900 border border-slate-800/80 rounded-2xl p-4 flex flex-col gap-4">
+    <section className="bg-canvas-900 border border-ink-800/80 rounded-2xl p-4 flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center space-x-3">
           <button
             onClick={onTogglePlay}
-            className="w-10 h-10 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center shadow-md transition-all"
+            className="w-10 h-10 rounded-xl bg-pulse-600 hover:bg-pulse-500 text-white flex items-center justify-center shadow-md transition-all"
             aria-label={isPlaying ? 'Pause' : 'Play'}
           >
             {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
           </button>
           <div>
             <div className="text-xs font-mono text-white font-semibold tabular-nums">
-              {formatSec(currentTimeSec)} <span className="text-slate-500">/ {formatSec(durationSec)}</span>
+              {formatSec(currentTimeSec)} <span className="text-ink-500">/ {formatSec(durationSec)}</span>
             </div>
-            <div className="text-[11px] text-emerald-400 font-mono flex items-center space-x-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <div className="text-[11px] text-brass-400 font-mono flex items-center space-x-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-brass-400 animate-ping" />
               <span>{status}</span>
             </div>
           </div>
@@ -84,7 +84,7 @@ export function WaveformPlayer() {
                 onClick={() => seekTo(synthetic.barSec)}
                 style={{ height: `${height}%` }}
                 className={`flex-1 rounded-full transition-all ${
-                  active ? 'bg-indigo-500 hover:bg-indigo-400' : 'bg-slate-800 hover:bg-slate-700'
+                  active ? 'bg-pulse-500 hover:bg-pulse-400' : 'bg-ink-800 hover:bg-ink-700'
                 }`}
                 title={`Seek to ${formatSec(synthetic.barSec)}`}
               />
@@ -95,7 +95,7 @@ export function WaveformPlayer() {
         <div className="flex flex-wrap items-center justify-end gap-2">
           <button
             onClick={cycleSpeed}
-            className="px-2.5 py-1 rounded-lg bg-canvas-950 border border-slate-800 text-xs font-mono text-slate-300 hover:text-white"
+            className="px-2.5 py-1 rounded-lg bg-canvas-950 border border-ink-800 text-xs font-mono text-ink-300 hover:text-white"
           >
             {playbackSpeed}x
           </button>
@@ -104,12 +104,12 @@ export function WaveformPlayer() {
             className={`px-2.5 py-1 rounded-lg border text-xs font-medium ${
               isRecordingMic
                 ? 'bg-rose-600 border-rose-500 text-white'
-                : 'bg-canvas-950 border-slate-800 text-slate-300 hover:text-white'
+                : 'bg-canvas-950 border-ink-800 text-ink-300 hover:text-white'
             }`}
           >
             {isRecordingMic ? '🎙️ Stop Live Mic' : '🎙️ Record Live Mic'}
           </button>
-          <label className="px-2.5 py-1 rounded-lg bg-canvas-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-white cursor-pointer">
+          <label className="px-2.5 py-1 rounded-lg bg-canvas-950 border border-ink-800 text-xs font-medium text-ink-300 hover:text-white cursor-pointer">
             📁 Upload Audio
             <input
               type="file"
@@ -125,7 +125,7 @@ export function WaveformPlayer() {
           {mode !== 'demo' && (
             <button
               onClick={capture.resetDemo}
-              className="px-2.5 py-1 rounded-full border border-emerald-500/40 bg-emerald-500/10 text-[11px] font-medium text-emerald-300"
+              className="px-2.5 py-1 rounded-full border border-brass-500/40 bg-brass-500/10 text-[11px] font-medium text-brass-300"
             >
               Reset Demo
             </button>
@@ -148,11 +148,11 @@ export function WaveformPlayer() {
             value={phrase}
             onChange={(event) => setPhrase(event.target.value)}
             placeholder="Type a phrase to simulate live speech..."
-            className="flex-1 bg-canvas-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
+            className="flex-1 bg-canvas-950 border border-ink-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-pulse-500"
           />
           <button
             type="submit"
-            className="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium"
+            className="px-3 py-2 rounded-xl bg-pulse-600 hover:bg-pulse-500 text-white text-xs font-medium"
           >
             Add phrase
           </button>

@@ -21,10 +21,10 @@ export function CommandPalette() {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-start justify-center pt-24 p-4">
-      <div className="bg-canvas-900 border border-slate-700 rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl">
-        <div className="p-3.5 border-b border-slate-800 flex items-center justify-between">
-          <span className="text-xs font-mono text-slate-400">PulseAI Command Palette</span>
-          <button onClick={() => setCommandOpen(false)} className="text-xs text-slate-400 hover:text-white">
+      <div className="bg-canvas-900 border border-ink-700 rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl">
+        <div className="p-3.5 border-b border-ink-800 flex items-center justify-between">
+          <span className="text-xs font-mono text-ink-400">PulseAI Command Palette</span>
+          <button onClick={() => setCommandOpen(false)} className="text-xs text-ink-400 hover:text-white">
             ESC
           </button>
         </div>
@@ -36,10 +36,10 @@ export function CommandPalette() {
                 setActiveTab(destination.tab);
                 setCommandOpen(false);
               }}
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-800 text-xs text-white flex justify-between"
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-ink-800 text-xs text-white flex justify-between"
             >
               <span>{destination.label}</span>
-              <kbd className="font-mono text-slate-400">{destination.hint}</kbd>
+              <kbd className="font-mono text-ink-400">{destination.hint}</kbd>
             </button>
           ))}
           <button
@@ -48,10 +48,10 @@ export function CommandPalette() {
               setCommandOpen(false);
               showToast('Synced all issues to Linear');
             }}
-            className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-800 text-xs text-emerald-400 flex justify-between"
+            className="w-full text-left px-3 py-2 rounded-lg hover:bg-ink-800 text-xs text-brass-400 flex justify-between"
           >
             <span>Sync All Extracted Tasks to Linear & HubSpot</span>
-            <kbd className="font-mono text-slate-400">⌘ S</kbd>
+            <kbd className="font-mono text-ink-400">⌘ S</kbd>
           </button>
         </div>
       </div>

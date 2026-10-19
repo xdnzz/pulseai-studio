@@ -7,7 +7,7 @@ This repository ("PulseAI — Real-Time AI Meeting & Agentic Workflow Studio") i
 ## 1. Tech Stack & Architecture
 - Framework: Next.js 15 (App Router) with React 19 and strict TypeScript.
 - State Management: Zustand (`src/store/useMeetingStore.ts`) with immutable state updates and selector optimization.
-- Styling: Tailwind CSS (`dark` mode first, Linear/Resend/Raycast-inspired slate/indigo/emerald palette, hairline `border-slate-800/80` borders, crisp `JetBrains Mono` for telemetry/timestamps and `Inter` for UI).
+- Styling: Tailwind CSS (`dark` mode first, warm charcoal canvas with coral `pulse`, brass, and clay accents, hairline `border-ink-800/80` borders, crisp `JetBrains Mono` for telemetry/timestamps and `Inter` for UI).
 - Icons: `lucide-react`.
 
 ## 2. Design Engineering Principles

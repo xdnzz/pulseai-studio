@@ -24,7 +24,7 @@ export function buildLiveSegment(input: {
     speaker: input.speaker?.trim() || LIVE_SPEAKER,
     initials: 'DD',
     role: 'Design Engineer',
-    avatarColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+    avatarColor: 'bg-brass-500/20 text-brass-300 border-brass-500/40',
     timestampSec,
     timestampFormatted: formatSec(timestampSec),
     text: input.text.trim(),

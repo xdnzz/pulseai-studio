@@ -17,7 +17,7 @@ export function StudioApp() {
   useCommandPaletteShortcut();
 
   return (
-    <div className="min-h-screen flex flex-col bg-canvas-950 text-slate-200">
+    <div className="min-h-screen flex flex-col bg-canvas-950 text-ink-200">
       <AppHeader />
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
         <WaveformPlayer />

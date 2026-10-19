@@ -15,10 +15,10 @@ export function ActionBoard() {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-canvas-900 border border-slate-800/80 p-4 rounded-2xl">
+      <div className="flex flex-wrap items-center justify-between gap-3 bg-canvas-900 border border-ink-800/80 p-4 rounded-2xl">
         <div>
           <h2 className="text-sm font-semibold text-white">AI Action Studio & Linear Sync Board</h2>
-          <p className="text-xs text-slate-400">Tasks automatically extracted from meeting audio with speaker attribution</p>
+          <p className="text-xs text-ink-400">Tasks automatically extracted from meeting audio with speaker attribution</p>
         </div>
         <div className="flex items-center space-x-2">
           <input
@@ -26,7 +26,7 @@ export function ActionBoard() {
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             placeholder="New action item title..."
-            className="bg-canvas-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+            className="bg-canvas-950 border border-ink-800 rounded-xl px-3 py-1.5 text-xs text-white"
           />
           <button
             onClick={() => {
@@ -36,7 +36,7 @@ export function ActionBoard() {
               setTitle('');
               showToast('Added new action item to board');
             }}
-            className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium flex items-center space-x-1"
+            className="px-3 py-1.5 rounded-xl bg-pulse-600 hover:bg-pulse-500 text-white text-xs font-medium flex items-center space-x-1"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>Add Task</span>
@@ -48,28 +48,28 @@ export function ActionBoard() {
         {KANBAN_COLUMNS.map((column) => {
           const columnTasks = tasksForStatus(actionItems, column.status);
           return (
-            <div key={column.status} className="bg-canvas-900 border border-slate-800/80 rounded-2xl p-4 space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-2.5">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">{column.title}</span>
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-canvas-950 text-slate-400">{columnTasks.length}</span>
+            <div key={column.status} className="bg-canvas-900 border border-ink-800/80 rounded-2xl p-4 space-y-3">
+              <div className="flex items-center justify-between border-b border-ink-800 pb-2.5">
+                <span className="text-xs font-semibold uppercase tracking-wider text-ink-300">{column.title}</span>
+                <span className="text-xs font-mono px-2 py-0.5 rounded bg-canvas-950 text-ink-400">{columnTasks.length}</span>
               </div>
               <div className="space-y-3">
                 {columnTasks.map((task) => {
                   const nextStatus = advanceStatus(task.status);
                   return (
-                    <div key={task.id} className="p-3.5 rounded-xl bg-canvas-950 border border-slate-800 space-y-2.5">
+                    <div key={task.id} className="p-3.5 rounded-xl bg-canvas-950 border border-ink-800 space-y-2.5">
                       <div className="flex items-center justify-between text-[11px] font-mono">
-                        <span className="text-indigo-400 font-semibold">{task.linearIssueKey}</span>
-                        <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300">{task.priority}</span>
+                        <span className="text-pulse-400 font-semibold">{task.linearIssueKey}</span>
+                        <span className="px-2 py-0.5 rounded bg-ink-800 text-ink-300">{task.priority}</span>
                       </div>
                       <p className="text-xs font-medium text-white leading-snug">{task.title}</p>
-                      <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+                      <div className="flex items-center justify-between text-[11px] text-ink-400 pt-1">
                         <span>{task.assignee}</span>
                         <div className="flex space-x-1">
                           {nextStatus && (
                             <button
                               onClick={() => moveTaskStatus(task.id, nextStatus)}
-                              className="px-2 py-0.5 rounded bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/30 font-mono text-[10px]"
+                              className="px-2 py-0.5 rounded bg-pulse-600/20 text-pulse-300 hover:bg-pulse-600/30 font-mono text-[10px]"
                             >
                               Advance →
                             </button>
