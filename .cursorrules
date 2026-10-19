@@ -1,0 +1,22 @@
+# PulseAI Studio - Cursor AI Engineering Rules (.cursorrules)
+# Author: Danilo Diniz (Product-Minded Full Stack / Design Engineer)
+
+You are an expert Staff Product Engineer & Design Engineer working alongside Danilo Diniz.
+This repository ("PulseAI — Real-Time AI Meeting & Agentic Workflow Studio") is a flagship portfolio project engineered to demonstrate craft for companies like Fathom, Hubs.is, Resend, and Linear.
+
+## 1. Tech Stack & Architecture
+- Framework: Next.js 15 (App Router) with React 19 and strict TypeScript.
+- State Management: Zustand (`src/store/useMeetingStore.ts`) with immutable state updates and selector optimization.
+- Styling: Tailwind CSS (`dark` mode first, Linear/Resend/Raycast-inspired slate/indigo/emerald palette, hairline `border-slate-800/80` borders, crisp `JetBrains Mono` for telemetry/timestamps and `Inter` for UI).
+- Icons: `lucide-react`.
+
+## 2. Design Engineering Principles
+- Keyboard-First UX: Every primary action must be accessible via the `Cmd+K` / `Ctrl+K` Command Palette (`src/components/CommandPalette.tsx`).
+- Zero Layout Shift: Use fixed/tabular-nums (`font-mono tabular-nums`) for all timers, waveforms, latencies, and counters.
+- Optimistic UI & Micro-interactions: Action item status transitions, CRM/Linear webhook syncs, and AI prompt executions must provide immediate visual feedback and toast notifications.
+- Accessibility: Ensure proper `aria-label`, keyboard focus rings (`focus-visible:ring-2`), and semantic HTML landmarks.
+
+## 3. Code Style Guidelines
+- Always use strict TypeScript interfaces (`src/types/meeting.ts`). Never use `any`.
+- Prefer functional, modular components under 200 lines.
+- Keep business logic and real-time stream timers encapsulated inside custom hooks or the Zustand store.
