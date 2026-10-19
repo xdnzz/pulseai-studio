@@ -42,10 +42,3 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser. Press `Cmd + K` (macOS) or `Ctrl + K` (Windows/Linux) at any time to open the Command Palette.
-
----
-
-## 🌐 Deploying to Vercel
-
-1. Push this repository to your GitHub account.
-2. Import the project on [Vercel](https://vercel.com/new) — Next.js is detected automatically with zero configuration required.
